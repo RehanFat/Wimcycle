@@ -43,3 +43,7 @@
   background-color: #e97121;
   transform: scale(1.05);
 }
+a.btn {
+  position: relative;
+  z-index: 10;
+}

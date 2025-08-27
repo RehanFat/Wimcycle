@@ -21,3 +21,15 @@
           }
         return $newData;
     }                                
+
+    function filter_by_id($data, $id)
+    {
+        $detail_sepeda = null;
+        foreach ($data as $sepeda) {
+            if ($sepeda['id'] == $id) {
+                $detail_sepeda = $sepeda;
+            }
+        }
+
+        return $detail_sepeda;
+    }

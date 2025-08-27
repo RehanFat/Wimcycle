@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="include/custom.css">
 </head>
 
-<body style="padding-top: 75px;">
+<body>
   <?php
   include "./include/header.php";
   ?>
@@ -26,14 +26,14 @@
       <a href="pembelian.php" class="btn btn-cta">Buy Now!</a>
     </div>
     <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#ffffffff" fill-opacity="1"
-        d="M0,192L40,197.3C80,203,160,213,240,229.3C320,245,400,267,480,245.3C560,224,640,160,720,149.3C800,139,880,181,960,208C1040,235,1120,245,1200,245.3C1280,245,1360,235,1400,229.3L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
-      </path>
-    </svg>
+    <path fill="#ffffffff" fill-opacity="1"
+      d="M0,192L40,197.3C80,203,160,213,240,229.3C320,245,400,267,480,245.3C560,224,640,160,720,149.3C800,139,880,181,960,208C1040,235,1120,245,1200,245.3C1280,245,1360,235,1400,229.3L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+    </path>
+  </svg>
   </section>
 
 
-
+  
 
   <!-- jumbotron -->
   <div class="container-fluid py-3">
@@ -68,7 +68,7 @@
               <p class="card-text">Sepeda kecil dengan rangka kuat, biasanya digunakan untuk atraksi, freestyle, atau
                 balap lintasan pendek. Memiliki ban tebal namun berukuran lebih kecil, stang lebar, dan desain ringan
                 agar mudah dikendalikan untuk trik.</p>
-              <button type="button" class="btn btn-primary">More Info</button>
+              <button type="button" class="btn btn-primary">More Info</button>>
             </div>
           </div>
         </div>
@@ -200,7 +200,6 @@
     <div class="w-100 h-25">
       <p class="text-center py-3">@copyright 2025, by Rehan</p>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"></script>

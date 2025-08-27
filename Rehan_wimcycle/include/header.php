@@ -10,6 +10,8 @@
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1000;
     }
 
     .nav-link {
@@ -30,7 +32,7 @@
     .dropdown-menu {
       border-radius: 12px;
       border: 1px solid #eee;
-      position: absolute;
+       position: absolute;
       z-index: 1100;
     }
 
@@ -92,10 +94,10 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-full">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="assets/logo.png" alt="Logo" width="70" height="70">
+        <img src="assets/logor.png" alt="Logo" width="70" height="70">
         Wimcycle
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -119,7 +121,7 @@
               <li><a class="dropdown-item" href="kategori.php">Lihat Semua</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="penjual.php">Penjual</a></li>
+          <li class="nav-item"><a class="nav-link" href="sepeda.php">Sepeda</a></li>
         </ul>
         <div class="search-container ms-auto">
           <input type="text" class="search-input" placeholder="Search...">
