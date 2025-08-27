@@ -24,6 +24,31 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
     <title>Wimcycle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="include/custom.css">
+    <style>
+        .bi {
+            font-size: 32px;
+            margin-right: 30px;
+        }
+
+        .warna-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .warna {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .warna.active {
+            border: 2px solid gold;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +81,14 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
         <div class="container d-flex justify-content-around mt-5">
             <div class="row">
                 <?php if ($detail_sepeda) : ?>
-                    <a href="<?php echo "./sepeda.php?id=" ?>" class="card-link">Kembali</a>
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                            <li class="breadcrumb-item"><a href="#">Sepeda</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><?php echo $detail_sepeda['model']; ?></li>
+                        </ol>
+                    </nav>
+                    <!-- <a href="<?php echo "./sepeda.php?id=" ?>" class="card-link">Kembali</a> -->
                     <div class="col-12">
                         <div class="row">
                             <div class="col-lg-4">
@@ -75,8 +107,13 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
                                 <p>
                                     <?php echo $detail_sepeda['deskripsi']; ?>
                                 </p>
-                                <button type="button" class="btn btn-warning">Masukkan Keranjang</button>
-                                <button type="button" class="btn btn-success">Beli Sekarang</button>
+                                <h4>Pilih Warna</h4>
+                                <div class="warna-container mb-4">
+                                    <div class="warna" style="background-color: black;" data-warna="hitam"></div>
+                                    <div class="warna" style="background-color: blue;" data-warna="merah"></div>
+                                </div>
+                                <i class="bi bi-basket"></i>
+                                <button type="button" class="mb-3 btn btn-success">Beli Sekarang</button>
                             </div>
                         </div>
                     </div>
@@ -84,7 +121,7 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
                     <?php foreach ($data_sepeda as $sepeda) : ?>
                         <div class="col-12 col-sm-5 col-lg-4 py-3">
                             <div class="card custom-card" style="width: 18rem;">
-                                <img src="<?php echo $sepeda['gambar']?>" class="card-img-top" alt="...">
+                                <img src="<?php echo $sepeda['gambar'] ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $sepeda['merek'] ?></h5>
                                     <h6 class="card-subtitle mb-2 text-muted"><?php echo $sepeda['model'] ?></h6>
@@ -113,6 +150,22 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
     <div class="w-100 h-25">
         <p class="text-center py-3">@copyright 2025, by Rehan</p>
     </div>
+
+    <script>
+        const warnaItems = document.querySelectorAll('.warna');
+
+        warnaItems.forEach(item => {
+            item.addEventListener('click', () => {
+                warnaItems.forEach(w => w.classList.remove('active'));
+                item.classList.add('active');
+
+                // Dapatkan warna yang dipilih (opsional)
+                const warnaTerpilih = item.getAttribute('data-warna');
+                console.log('Warna dipilih:', warnaTerpilih);
+            });
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 
