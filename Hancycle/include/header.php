@@ -10,7 +10,7 @@
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 8px 10px rgba(0,0,0,0.2);
-      border-radius: 0px 0px 30% 30%;
+      border-radius: 0px 0px 25% 25%;
     }
 
     .nav-link {
@@ -48,6 +48,11 @@
         transform: none !important;
         left: auto !important;
       }
+      .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 8px 10px rgba(0,0,0,0.2);
+      border-radius: 0px 0px 10% 10%;
+    }
     }
 
     .dropdown-toggle::after {
@@ -88,6 +93,27 @@
       color: #000;
       cursor: pointer;
     }
+
+    @media (max-width: 991px) {
+    .search-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .search-input {
+      width: 0;
+      opacity: 0;
+      transition: all 0.4s ease;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 14px;
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+}
   </style>
 </head>
 
@@ -95,9 +121,9 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-full fixed-top">
     <div class="container">
-      <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="navbar-brand" href="#">
-        <img src="assets/logor.png" alt="Logo" width="70" height="70">
-        Hancycle
+      <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:22px;" class="navbar-brand" href="#">
+        <img src="assets/logo-hancycle.png" alt="Logo" width="75" height="75">
+        &nbsp;Hancycle
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

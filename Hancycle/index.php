@@ -9,6 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hancycle</title>
+  <link rel="icon" href="assets/logo-hancycle.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="include/custom.css">
@@ -151,7 +152,7 @@
         <div class="row">
           <div class="col-12 col-sm-5 col-lg-4 py-3">
             <div class="card custom-card" style="width: 18rem;">
-              <img src="assets/gunung-grey.jpg" class="card-img-top" alt="...">
+              <img src="assets/gunung-hancycle.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Sepeda Gunung</h5>
                 <p class="card-text">Dirancang khusus untuk medan berat seperti tanah, bebatuan, dan jalur pegunungan.
@@ -162,7 +163,7 @@
           </div>
           <div class="col-12 col-sm-6 col-lg-4 py-3">
             <div class="card custom-card" style="width: 18rem;">
-              <img src="assets/bmx.jpg" class="card-img-top" alt="...">
+              <img src="assets/bmx-hancycle.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Sepeda BMX</h5>
                 <p class="card-text">sepeda kecil dengan rangka kuat yang populer untuk freestyle, atraksi, dan balap

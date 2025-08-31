@@ -7,13 +7,12 @@
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-
 /* Hero Section */
 .hero {
   position: relative;
   height: 85vh;
   background: url('../assets/hero.png');
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }

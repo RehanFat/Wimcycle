@@ -22,28 +22,11 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hancycle</title>
+    <link rel="icon" href="assets/logo-hancycle.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="include/custom.css">
     <style>
-        .warna-container {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .warna {
-            width: 35px;
-            height: 35px;
-            border-radius: 6px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: 0.2s;
-        }
-
-        .warna.active {
-            border: 2px solid gold;
-        }
-
         .breadcrumb-item a {
             color: #0a1d4d;
             text-decoration: none;
@@ -52,6 +35,20 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
 
         .breadcrumb-item a:hover {
             color: #f39c12;
+        }
+
+        .zoom-container {
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #f39c12;
+            border-radius: 25px;
+        }
+
+        .zoom-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s ease;
         }
     </style>
 </head>
@@ -100,8 +97,10 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
                     <div class="col-12">
                         <div class="row">
                             <div class="col-lg-6">
-                                <img style="border: 2px solid #f39c12; border-radius: 30px; min-width:350px;" id="gambarSepeda"
-                                    class="img-fluid" src="<?php echo $detail_sepeda['gambar'] ?>" alt="Eror">
+                                <div class="zoom-container">
+                                    <img id="gambarSepeda"
+                                        class="img-fluid zoom-image" src="<?php echo $detail_sepeda['gambar'] ?>" alt="Eror">
+                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <h3>
@@ -116,7 +115,7 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
                                 <p>
                                     <?php echo $detail_sepeda['deskripsi']; ?>
                                 </p>
-                                <button type="button" class="mb-3 btn btn-warning">Masukkan Keranjang</button>
+                                <button type="button" class="mb-3 btn btn-warning" onclick="addToCart()">Masukkan ke <i class="bi bi-cart"></i></button>
                                 <button type="button" class="mb-3 btn btn-outline-success">Beli Sekarang</button>
                             </div>
                         </div>
@@ -129,9 +128,9 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $sepeda['merek'] ?></h5>
                                     <h6 class="card-subtitle mb-2 text-muted"><?php echo $sepeda['model'] ?></h6>
-                                    <p class="card-text"><?php echo $sepeda['deskripsi'] ?></p>
+                                    <p class="card-text"><?php echo $sepeda['short_description'] ?></p>
                                     <a href="<?php echo "./sepeda.php?id=" . $sepeda['id'] ?>" class="btn btn-primary">Lihat
-                                        Detail</a>
+                                        Detail&nbsp; <i class="bi bi-arrow-right-circle"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -141,20 +140,62 @@ $detail_sepeda = filter_by_id($data_sepeda, $sepeda_id);
         </div>
     </div>
     <!-- card end -->
+    
+    <!-- Footer Start -->
     <div class="card">
         <div class="card-body container d-flex justify-content-between">
             <div class="">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             </div>
-
             <a href="#" class="btn btn-primary" style="height: fit-content">Go somewhere</a>
         </div>
     </div>
-
+    <!-- Footer End -->
     <div class="w-100 h-25">
         <p class="text-center py-3">@copyright 2025, by Rehan</p>
     </div>
+
+    <!-- Js Zoom Image -->
+    <script>
+        const container = document.querySelector(".zoom-container");
+        const image = document.querySelector(".zoom-image");
+
+        container.addEventListener("mousemove", (e) => {
+            const {
+                left,
+                top,
+                width,
+                height
+            } = container.getBoundingClientRect();
+            const x = (e.clientX - left) / width;
+            const y = (e.clientY - top) / height;
+
+            image.style.transformOrigin = `${x * 100}% ${y * 100}%`;
+            image.style.transform = "scale(2)"; // perbesar 2x
+        });
+
+        container.addEventListener("mouseleave", () => {
+            image.style.transformOrigin = "center center";
+            image.style.transform = "scale(1)";
+        });
+    </script>
+    <!-- End js Zoom Image -->
+
+    <!-- Js Add To Cart --> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script>
+        function addToCart() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: 'Produk sudah ditambahkan ke keranjang.',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+    </script>
+    <!-- End Js Add To Cart -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
