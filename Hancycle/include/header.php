@@ -1,3 +1,13 @@
+<?php 
+  require_once "../config/base_config.php";
+  session_start();
+
+  $user = [];
+  if(isset($_SESSION['name'])) {
+    $user = $_SESSION['name'];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,10 +129,10 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-full fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-full ">
     <div class="container">
       <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:22px;" class="navbar-brand" href="#">
-        <img src="assets/logo-hancycle.png" alt="Logo" width="75" height="75">
+        <img src="../assets/logo-hancycle.png" alt="Logo" width="75" height="75">
         &nbsp;Hancycle
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -148,10 +158,17 @@
           </li>
           <li class="nav-item"><a class="nav-link" href="sepeda.php">Sepeda</a></li>
         </ul>
-        <div class="search-container ms-auto">
+        <div class="ms-auto">
+          <?php if(isset($_SESSION['name'])): ?>
+              <a href="<?php echo $config->BASE_URL?>/controller/handle-logout" class="btn btn-danger">Logout</a>
+          <?php else: ?>
+              <a href="<?php echo $config->BASE_URL?>/dashboard/login" class="btn btn-success">Login</a>
+          <?php endif; ?>
+        </div>
+        <!-- <div class="search-container ms-auto"> 
           <input type="text" class="search-input" placeholder="Search...">
           <i class="bi bi-search search-icon"></i>
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>

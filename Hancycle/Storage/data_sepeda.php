@@ -5,7 +5,7 @@
     $data_sepeda = [
         [
             "id" => 1,
-            "merek" => "Hancycle",
+            "merek" => "Hancycle MTB 1",
             "model" => "MTB (Mountain Bike / Sepeda Gunung)",
             "harga" => 1700000,
             "gambar" => "./assets/gunung-hancycle.png",
@@ -15,7 +15,7 @@
 
         [
             "id" => 2,
-            "merek" => "Hancycle",
+            "merek" => "Hancycle MTB 2",
             "model" => "MTB (Mountain Bike / Sepeda Gunung)",
             "harga" => 1700000,
             "gambar" => "./assets/gunung-hancycle.png",
@@ -25,7 +25,7 @@
 
         [
             "id" => 3,
-            "merek" => "Hancycle",
+            "merek" => "Hancycle MTB 3",
             "model" => "MTB (Mountain Bike / Sepeda Gunung)",
             "harga" => 1800000,
             "gambar" => "./assets/gunung-hancycle.png",
@@ -35,7 +35,7 @@
 
         [
             "id" => 4,
-            "merek" => "Hancycle",
+            "merek" => "Hancycle BMX 1",
             "model" => "BMX",
             "harga" => 2500000,
             "gambar" => "./assets/bmx-hancycle.png",
@@ -45,7 +45,7 @@
 
         [
             "id" => 5,
-            "merek" => "Hancycle",
+            "merek" => "Hancycle BMX 2",
             "model" => "BMX",
             "harga" => 2700000,
             "gambar" => "./assets/bmx-hancycle.png",
@@ -55,7 +55,7 @@
 
         [
             "id" => 6,
-            "merek" => "Hancycle",
+            "merek" => "Hancycle BMX 3",
             "model" => "BMX",
             "harga" => 2800000,
             "gambar" => "./assets/bmx-hancycle.png",
