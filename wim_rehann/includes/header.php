@@ -73,9 +73,22 @@ include "base_url.php";
                     </li>
 
                 </ul>
-                <form class="d-flex" role="search">
-                    <a href="<?= base_url;?>login.php" class="btn btn-success">Masuk</a>
-                </form>
+
+                <?php 
+
+                    if(isset($_SESSION['level'])) 
+                    {
+                    ?>
+                    <a href="<?= base_url. "login/logout.php"; ?>" class="btn btn-danger">Logout</a>
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+                    <?php
+                    }
+                ?>
+
             </div>
         </div>
     </nav>

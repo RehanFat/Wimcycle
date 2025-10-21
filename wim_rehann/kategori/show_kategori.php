@@ -2,14 +2,11 @@
     session_start();
     $_SESSION['menu']="kategori";
     include "../includes/header.php";
+
+    echo $_SESSION['nama_lengkap'];
 ?>
 
-    <!-- Start Content -->
-    <div class="container vh-custom">
-        <h1>Webiste ini adalah webiste resmi <b>Wimcycle</b></h1>
-        <h1>Kategori</h1>
-    </div>
-    <!-- End Content -->
+    
 
 <?php include "../includes/footer.php" ?>
 

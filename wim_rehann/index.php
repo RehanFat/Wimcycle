@@ -4,11 +4,35 @@
     include "includes/header.php";
 ?>
 
-    <!-- Start Content -->
-    <div class="container vh-custom">
-        <h1>Webiste ini adalah webiste resmi <b>Wimcycle</b></h1>
-    </div>
-    <!-- End Content -->
+<?php 
+
+if(isset($_SESSION['level'])) 
+    {
+?>
+    <!-- tampilan admin start -->
+        <!-- Start Content -->
+            <div class="container vh-custom">
+                    <h1>Selamat Datang Mas <b><?= $_SESSION['nama_lengkap']; ?></b></h1>
+            </div>
+        <!-- End Content -->
+    <!-- tampilan admin end -->
+<?php
+    }
+else
+    {
+?>
+    <!-- tampilan pengguna start -->
+        <!-- Start Content -->
+            <div class="container vh-custom">
+                <h1>Webiste ini adalah webiste resmi <b>Wimcycle</b></h1>
+            </div>
+        <!-- End Content -->
+    <!-- tampilan pengguna end -->
+<?php
+    }
+?>
+
+    
 
 <?php include "includes/footer.php" ?>
 
