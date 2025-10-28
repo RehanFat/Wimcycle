@@ -16,3 +16,5 @@
         </div>
     </div>
     <!-- End Footer -->
+
+    <script src="<?= base_url. "bootstrap/js/bootstrap.bundle.js"; ?>"></script>

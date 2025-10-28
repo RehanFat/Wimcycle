@@ -22,7 +22,6 @@ include "base_url.php";
             min-height: 80vh;
         }
 
-        .bi {}
     </style>
 </head>
 
@@ -74,19 +73,13 @@ include "base_url.php";
 
                 </ul>
 
-                <?php 
+                <?php
 
-                    if(isset($_SESSION['level'])) 
-                    {
+                if (isset($_SESSION['level'])) {
                     ?>
-                    <a href="<?= base_url. "login/logout.php"; ?>" class="btn btn-danger">Logout</a>
-                    <?php
-                    }
-                    else
-                    {
-                    ?>
-                    <?php
-                    }
+                    <a href="<?= base_url . "login/logout.php"; ?>" class="btn btn-danger">Logout</a>
+                <?php
+                } 
                 ?>
 
             </div>
