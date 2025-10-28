@@ -1,5 +1,6 @@
 <?php 
-  require_once "../config/base_config.php";
+  require_once $_SERVER['DOCUMENT_ROOT'] . "/Hancycle/config/base_config.php";
+
   session_start();
 
   $user = [];
@@ -7,7 +8,7 @@
     $user = $_SESSION['name'];
   }
 ?>
-
+x
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,7 @@
       background-color: #ffffff;
       box-shadow: 0 8px 10px rgba(0,0,0,0.2);
       border-radius: 0px 0px 25% 25%;
+      z-index: 1000;
     }
 
     .nav-link {
@@ -32,6 +34,7 @@
     .nav-link:hover {
       color: #f39c12 !important;
     }
+
 
     .dropdown-menu a:hover {
       background-color: #f39c12;

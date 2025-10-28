@@ -7,6 +7,12 @@ if (isset($_GET['success'])) {
     $success = $_GET['success'];
 }
 
+$error = "";
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+
+$new_data_sepeda = $data_sepeda;
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +38,17 @@ if (isset($_GET['success'])) {
                 <?php if ($success) : ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong>Login Successfull!</strong> Welcome Back   
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <?php if ($error) : ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Edit GAGAL</strong> id sepeda tidak ditemukan
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>
@@ -135,7 +152,7 @@ if (isset($_GET['success'])) {
             </thead>
 
             <tbody>
-                <?php foreach ($data_sepeda as $sepeda) : ?>
+                <?php foreach ($new_data_sepeda as $sepeda) : ?>
                     <tr>
                         <td><?= $sepeda['id'] ?></td>
                         <td>
@@ -165,7 +182,7 @@ if (isset($_GET['success'])) {
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-danger">Delete</button>
+                                                <a href="<?= $config->BASE_URL ?>/controller/sepeda-controller/handle-delete-sepeda?id=<?= $sepeda['id'] ?>" type="button" class="btn btn-danger">Delete</a>
                                             </div>
                                         </div>
                                     </div>
